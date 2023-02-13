@@ -6,7 +6,9 @@ on:
 job:
   Build-Environment:
     runs-on: "ubuntu-latest"
-	steps:  
+    
+    steps:
+    
       - name: "Checkout Code"
         uses: actions/checkout@v3
       - name: "Check java"
