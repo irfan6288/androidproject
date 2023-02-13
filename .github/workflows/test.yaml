@@ -11,6 +11,14 @@ jobs:
     
       - name: "Checkout Code"
         uses: actions/checkout@v3
+        
+        
       - name: "Check java"
         run: |
           java -version
+          
+          
+      - name: "Run Test"
+        run: |
+          chmod a+x gradlew
+          ./gradlew --version
