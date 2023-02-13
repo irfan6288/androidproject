@@ -27,6 +27,11 @@ jobs:
         run: |
           ./gradlew build
           
-      - name: "List  tasks"
+      - name: "Build a debug APK"
         run: |
-          ./gradlew tasks
+          ./gradlew assembleDebug
+
+      - name: "Build a bundleDebug APK"
+        run: |
+          ./gradlew :base:bundleDebug
+          
