@@ -4,7 +4,7 @@ on:
     branches: [ "develop" ]
 
 jobs:
-  Build and Push:
+  Build-and-Push:
     runs-on: "ubuntu-latest"
     
     steps:
