@@ -39,11 +39,9 @@ jobs:
           file: ./app/build/outputs/apk/release/app-release-unsigned.apk
           group: "tester"
     
-      - name: Deploy to App Center
-        uses: microsoft/appcenter@v3
+      - name: Deploy to Codepush
+        uses: NishanthShankar/codepush-action@master
         with:
-          app_secret: ${{secrets.APP_CENTER_TOKEN}}
-          file: ./app/build/outputs/apk/release/app-release-unsigned.apk
-          app: test
-          release_notes: 'Automatic build from GitHub Actions'    
-          
+          args: deployment add -a srinivasan-vthink.co.in/test Staging
+        env:
+          APPCENTER_ACCESS_TOKEN: ${{secrets.APP_CENTER_TOKEN}}
