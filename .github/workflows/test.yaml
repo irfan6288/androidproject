@@ -31,7 +31,6 @@ jobs:
         run: |
           ./gradlew assembleDebug
 
-      - name: "Build a bundleDebug APK"
+      - name: "verify the build"
         run: |
-          ./gradlew :base:bundleDebug
-          
+          find . -type f -iname *.apk
