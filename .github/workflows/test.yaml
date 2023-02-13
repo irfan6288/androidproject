@@ -35,3 +35,12 @@ jobs:
       - name: "verify the build"
         run: |
           find . -type f -iname *.apk
+          
+      - name: "upload artefact to App Center"
+        uses: wzieba/AppCenter-Github-Action@v1
+        with:
+          appName: "srinivasan-vthink.co.in/test"
+          token: ${{secrets.APP_CENTER_TOKEN}}
+          file: ./app/build/outputs/apk/release/app-release-unsigned.apk
+          group: "test"
+          
