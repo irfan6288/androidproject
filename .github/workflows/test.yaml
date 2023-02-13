@@ -4,14 +4,13 @@ on:
     branches: [ "develop" ]
 
 jobs:
-  Build-Environment:
+  Build and Push:
     runs-on: "ubuntu-latest"
     
     steps:
     
       - name: "Checkout Code"
         uses: actions/checkout@v3
-        
         
 #      - name: "Check java"
 #        run: |
@@ -31,10 +30,6 @@ jobs:
       - name: "Build a debug APK"
         run: |
           ./gradlew assembleDebug
-
-      - name: "verify the build"
-        run: |
-          find . -type f -iname *.apk
           
       - name: "upload artefact to App Center"
         uses: wzieba/AppCenter-Github-Action@v1
