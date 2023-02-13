@@ -40,7 +40,7 @@ jobs:
           group: "tester"
           
       - name: Deploy to App Center
-        uses: microsoft/appcenter-action@v2
+        uses: microsoft/appcenter@v2
         with:
           app_secret: ${{secrets.APP_CENTER_TOKEN}}
           file: ./app/build/outputs/apk/release/app-release-unsigned.apk
