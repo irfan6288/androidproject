@@ -3,7 +3,7 @@ on:
   push:
     branches: [ "develop" ]
 
-job:
+jobs:
   Build-Environment:
     runs-on: "ubuntu-latest"
     
