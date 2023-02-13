@@ -26,3 +26,7 @@ jobs:
       - name: "Run Build"
         run: |
           ./gradlew build
+          
+      - name: "List  tasks"
+        run: |
+          ./gradlew tasks
