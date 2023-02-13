@@ -38,17 +38,17 @@ jobs:
           token: ${{secrets.APP_CENTER_TOKEN}}
           file: ./app/build/outputs/apk/release/app-release-unsigned.apk
           group: "tester"
+    
+#      - name: Deploy to App Center
+#        uses: microsoft/appcenter@v2
+#        with:
+#          app_secret: ${{secrets.APP_CENTER_TOKEN}}
+#          file: ./app/build/outputs/apk/release/app-release-unsigned.apk
+#          app: test
+#          release_notes: 'Automatic build from GitHub Actions'    
           
-      - name: Deploy to App Center
-        uses: microsoft/appcenter@v2
+      - name: run any App Center CLI command
+        uses: joabalea/App-Center-action@v1.0.2
         with:
-          app_secret: ${{secrets.APP_CENTER_TOKEN}}
-          file: ./app/build/outputs/apk/release/app-release-unsigned.apk
-          app: test
-          release_notes: 'Automatic build from GitHub Actions'    
-          
-        - name: run any App Center CLI command
-          uses: joabalea/App-Center-action@v1.0.2
-          with:
-            command: appcenter codepush deployment add -a srinivasan-vthink.co.in/test Staging
-            token: ${{secrets.APP_CENTER_TOKEN}}
+          command: appcenter codepush deployment add -a srinivasan-vthink.co.in/test Staging
+          token: ${{secrets.APP_CENTER_TOKEN}}
