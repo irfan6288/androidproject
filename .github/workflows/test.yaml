@@ -42,5 +42,5 @@ jobs:
           appName: "srinivasan-vthink.co.in/test"
           token: ${{secrets.APP_CENTER_TOKEN}}
           file: ./app/build/outputs/apk/release/app-release-unsigned.apk
-          group: "test"
+          group: "tester"
           
