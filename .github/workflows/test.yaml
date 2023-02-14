@@ -20,18 +20,21 @@ jobs:
       - name: "Run Test"
         run: |
           chmod a+x gradlew
-          ./gradlew build
-          ./gradlew assembleDebug
-          # ./gradlew app:bundleRelease
+          # ./gradlew build
+          # ./gradlew assembleDebug
+          ./gradlew app:bundleRelease
+      - name: "find Build APK"
+        run: |
+          find . -iname *.apk -type f 
 
-      - name: "upload artefact to App Center"
-        uses: wzieba/AppCenter-Github-Action@v1
-        with:
-          appName: "srinivasan-vthink.co.in/test"
-          token: ${{secrets.APP_CENTER_TOKEN}}
-          file: ./app/build/outputs/apk/release/app-release-unsigned.apk
-          group: "tester" 
-          notifyTesters: "true"
+      # - name: "upload artefact to App Center"
+      #   uses: wzieba/AppCenter-Github-Action@v1
+      #   with:
+      #     appName: "srinivasan-vthink.co.in/test"
+      #     token: ${{secrets.APP_CENTER_TOKEN}}
+      #     file: ./app/build/outputs/apk/release/app-release-unsigned.apk
+      #     group: "tester" 
+      #     notifyTesters: "true"
 
       # - name: "Run Build"
       #   run: |
