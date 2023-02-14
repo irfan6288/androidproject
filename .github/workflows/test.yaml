@@ -25,7 +25,11 @@ jobs:
           ./gradlew assembleRelease
           ./gradlew app:bundleRelease
         env:
-          TEST: "vthink"
+          STORE_PASSWORD: ${{ secrets.STORE_PASSWORD }}
+          KEY_ALIAS: ${{ secrets.STORE_PASSWORD }}
+          KEY_PASSWORD: ${{ secrets.STORE_PASSWORD }}
+
+
 
       - name: "upload artefact to App Center"
         uses: wzieba/AppCenter-Github-Action@v1
