@@ -1,12 +1,12 @@
-name: Build APK
+name: Build Release Android APK
 on:
   push:
     branches: [ "develop" ]
 
 jobs:
-  Build-and-Push:
+  Build-Release-Android-APK:
     runs-on: "ubuntu-latest"
-    if: "contains(github.event.head_commit.message, 'build')"
+    if: "contains(github.event.head_commit.message, 'android')"
     
     steps:
     
