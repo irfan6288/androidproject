@@ -18,10 +18,10 @@ jobs:
           java -version
           
           
-# #      - name: "Run Test"
-# #       run: |
-# #          chmod a+x gradlew
-# #          ./gradlew test
+#      - name: "Run Test"
+#       run: |
+#          chmod a+x gradlew
+#          ./gradlew test
           
 #       - name: "Run Build"
 #         run: |
