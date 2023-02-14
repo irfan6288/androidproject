@@ -5,7 +5,22 @@ plugins {
 android {
     namespace 'com.example.automationtest'
     compileSdk 33
-
+    
+    signingConfigs {
+        debug {
+            storeFile file("key/Demo.jks")
+            storePassword System.getenv("TEST")
+            keyAlias System.getenv("TEST")
+            keyPassword System.getenv("TEST")
+        }
+        release{
+            storeFile file("key/Demo.jks")
+            storePassword System.getenv("TEST")
+            keyAlias System.getenv("TEST")
+            keyPassword System.getenv("TEST")
+        }
+    }
+    
     defaultConfig {
         applicationId "com.example.automationtest"
         minSdk 21
@@ -16,12 +31,10 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-        }
+    debug {
+        signingConfig signingConfigs.debug
     }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
