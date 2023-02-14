@@ -16,26 +16,28 @@ jobs:
       - name: "Check java"
         run: |
           java -version
+                   
+      - name: "Run Test"
+        run: |
+          chmod a+x gradlew
+          ./gradlew assembleDebug
+          # ./gradlew app:bundleRelease
+
+      - name: "upload artefact to App Center"
+        uses: wzieba/AppCenter-Github-Action@v1
+        with:
+          appName: "srinivasan-vthink.co.in/test"
+          token: ${{secrets.APP_CENTER_TOKEN}}
+          file: ./app/build/outputs/apk/release/app-release-unsigned.apk
+          group: "tester" 
+          notifyTesters: true
+
+      # - name: "Run Build"
+      #   run: |
+      #     chmod a+x gradlew
+      #     ./gradlew build
           
+      # - name: "Build a debug APK"
+      #   run: |
+      #     ./gradlew assembleDebug
           
-#      - name: "Run Test"
-#       run: |
-#          chmod a+x gradlew
-#          ./gradlew test
-          
-#       - name: "Run Build"
-#         run: |
-#           chmod a+x gradlew
-#           ./gradlew build
-          
-#       - name: "Build a debug APK"
-#         run: |
-#           ./gradlew assembleDebug
-          
-#       - name: "upload artefact to App Center"
-#         uses: wzieba/AppCenter-Github-Action@v1
-#         with:
-#           appName: "srinivasan-vthink.co.in/test"
-#           token: ${{secrets.APP_CENTER_TOKEN}}
-#           file: ./app/build/outputs/apk/release/app-release-unsigned.apk
-#           group: "tester"
