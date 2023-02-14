@@ -20,6 +20,7 @@ jobs:
       - name: "Run Test"
         run: |
           chmod a+x gradlew
+          ./gradlew build
           ./gradlew assembleDebug
           # ./gradlew app:bundleRelease
 
