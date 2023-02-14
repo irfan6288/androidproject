@@ -25,10 +25,6 @@ jobs:
           ./gradlew assembleRelease
           ./gradlew app:bundleRelease
 
-      # - name: "find Build APK"
-      #   run: |
-      #     find . -iname *.apk -type f 
-
       - name: "upload artefact to App Center"
         uses: wzieba/AppCenter-Github-Action@v1
         with:
