@@ -27,7 +27,7 @@ jobs:
       - name: "upload artefact to App Center"
         uses: wzieba/AppCenter-Github-Action@v1
         with:
-          appName: "mohammedirfan-vthink.co.in/test"
+          appName: "mohammedirfan-vthink.co.in/android"
           token: ${{secrets.APP_CENTER_TOKEN}}
           file: ./app/build/outputs/apk/release/app-release.apk
           group: "DevTeam" 
