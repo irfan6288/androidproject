@@ -20,7 +20,8 @@ jobs:
       - name: "Run Test"
         run: |
           chmod a+x gradlew
-          # ./gradlew build
+          ./gradlew build
+          ./gradlew assembleRelease
           # ./gradlew assembleDebug
           ./gradlew app:bundleRelease
       - name: "find Build APK"
